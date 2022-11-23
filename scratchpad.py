@@ -32,6 +32,9 @@ class Pad():
 		self.text_ed = tkinter.Text(root, width=50, height=30, bg = "#ffffff", borderwidth=0, highlightthickness=0, padx=self.padding, pady=self.padding)
 		self.text_ed.pack(side=tkinter.LEFT)
 
+		self .fmt_dropdown = tkinter.OptionMenu(root, "hex", "dec", "bin")
+		self.fmt_dropdown.pack(side=tkinter.TOP)
+
 		self.text_out = tkinter.Text(root, width=25, height=30, bg = "#c8c8c8", padx=self.padding, pady=self.padding)
 		self.text_out.config(state=tkinter.DISABLED)
 		self.text_out.pack(side=tkinter.RIGHT)
@@ -55,7 +58,7 @@ class Pad():
 
 		self.text_out.config(state=tkinter.NORMAL)
 		self.text_out.delete("1.0", tkinter.END)
-		regexparse = r'\d+|[+/*-==()]'
+		regexparse = r'[A-Fa-f0-9xX]\d+|[+/*-==()]'
 
 		print("\n")
 		for line in input_text.split("\n"):
@@ -71,6 +74,8 @@ class Pad():
 
 			try:
 				ans = eval(elem)
+				if ans is int:
+					ans = str(ans.toHex())
 				print("\tevaluated to: " + str(ans))
 				self.text_out.insert(tkinter.INSERT, str(ans) + "\n")
 
