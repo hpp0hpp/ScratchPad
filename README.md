@@ -1,9 +1,13 @@
 # scratchpad
-Basic notepad app with some built in calculator functions written in python using Tkinter.
+Basic notepad app with some built in calculator functions written in python using Tkinter. from https://github.com/fmresearchnovak/scratchpad
 
 Scratchpad can be used for notetaking and will automatically perform in-line math while you type.  For those interested, it basically finds any mathematical looking questions and throws them into python.
 
 ![Screenshot of scratchpad adding some numbers](./Screenshot.png "Screenshot1")  
+
+
+I create version2 scratchpad with dearpygui inspired by https://github.com/fmresearchnovak/scratchpad
+![image](https://user-images.githubusercontent.com/54829297/203456670-31384c20-170d-49b6-b50b-07b79641e6f2.png)
 
 ### Supported Operations
 
